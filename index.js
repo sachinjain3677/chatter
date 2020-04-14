@@ -39,9 +39,10 @@ tech.on('connection' ,(socket) => {
 		console.log(`${data.username}: ${data.msg}`);
 		tech.in(data.room).emit('message', `${data.username}: ${data.msg}`);
 	});
-	socket.on('disconnect', () => {
-		console.log('user disconnected');
 
-		tech.emit('message', 'user disconnected');
+	socket.on('disconnect', (data) => {
+		console.log(`user disconnected`);
+
+		tech.emit('message', `user disconnected`);
 	})
 })

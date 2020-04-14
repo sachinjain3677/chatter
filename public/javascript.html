@@ -47,7 +47,6 @@
 				username = localStorage.getItem("username");				
 			}
 
-
 			$('form').submit(() => {
 				let msg = $('#m').val();
 				socket.emit('message', {msg, room, username});
