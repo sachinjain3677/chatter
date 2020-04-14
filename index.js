@@ -26,10 +26,6 @@ app.get('/css', (req, res) => {
 	res.sendFile(__dirname + '/public/css.html');
 });
 
-app.get('/chat', (req, res) => {
-	res.sendFile(__dirname + '/public/chat.html');
-});
-
 const tech = io.of('/tech');
 
 tech.on('connection' ,(socket) => {
