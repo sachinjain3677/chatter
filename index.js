@@ -25,7 +25,7 @@ app.get('/swift', (req, res) => {
 app.get('/css', (req, res) => {
 	res.sendFile(__dirname + '/public/css.html');
 });
-
+	
 const tech = io.of('/tech');
 
 tech.on('connection' ,(socket) => {

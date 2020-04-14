@@ -39,7 +39,7 @@
 		<script src="/socket.io/socket.io.js"></script>
 
 		<script>
-			const username = "";
+			let username = "";
 			const room = 'css';
 			const socket = io('/tech');
 			
@@ -49,13 +49,13 @@
 
 			$('form').submit(() => {
 				let msg = $('#m').val();
-				socket.emit('message', {msg, room});
+				socket.emit('message', {msg, room, username});
 				$('#m').val('');
 				return false;
 			});
 
 			socket.on('connect', () => {
-				socket.emit('join', { room: room });
+				socket.emit('join', { room: room, username: username});
 			})
 
 			socket.on('message', (msg) => {
