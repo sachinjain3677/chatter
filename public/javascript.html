@@ -39,8 +39,15 @@
 		<script src="/socket.io/socket.io.js"></script>
 
 		<script>
+			const username = "";
 			const room = 'javascript';
 			const socket = io('/tech');
+					
+			window.onload = function(){
+				username = localStorage.getItem("username");				
+			}
+
+
 			$('form').submit(() => {
 				let msg = $('#m').val();
 				socket.emit('message', {msg, room});
